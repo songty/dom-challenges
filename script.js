@@ -31,24 +31,25 @@ function addElement () {
   myArticles[1].insertBefore(newFirsth1, myP[1]);
   myHead[0].insertBefore(title);
 
+	myH1s = document.getElementsByTagName("h1");
+  myH1sArray = Array.prototype.slice.call(myH1s);
 
-  Array.prototype.slice.call(myArticles).forEach(function(article) {
-    // console.log(article);
-    console.log(document.getElementsByTagName("h1"));
-    Array.prototype.slice.call(article).forEach(function(articleContents) {
-      console.log(articleContents);
-      articleContents.addEventListener("click", function(event) {
-        event.target.innerHTML = "";
-      }, false);
-    });
+  // for (var i = 1; i < myH1s.length; i++) {
+  //   myH1sArray[i].addEventListener("click", function(event) {
+  //     var cache = event.target.nextSibling.innerHTML;
+  //     if (event.target.nextSibling.innerHTML !== "") {
+  //       event.target.nextSibling.innerHTML = "";
+  //     } else {
+  //       event.target.nextSibling.innerHTML = cache;
+  //     }
+  //   }, false);
+  // }
 
-  });
-
-
-
+  for (var i = 1; i < myH1s.length; i++) {
+    myH1sArray[i].addEventListener("click", function(event) {
+      event.target.nextSibling.setAttribute("display", "none");
+    }, false);
+  }
 }
 
-function addClick() {
-
-}
 
