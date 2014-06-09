@@ -1,6 +1,6 @@
 document.body.onload = addElement;
 // document.body.onload = addClick;
-function addElement () { 
+function addElement () {
   // create a new div element 
   // and give it some content 
   var newArticle = document.createElement("article"); 
@@ -31,11 +31,24 @@ function addElement () {
   myArticles[1].insertBefore(newFirsth1, myP[1]);
   myHead[0].insertBefore(title);
 
-	document.getElementById("test").addEventListener("click", addClick, false);
+
+  Array.prototype.slice.call(myArticles).forEach(function(article) {
+    // console.log(article);
+    console.log(document.getElementsByTagName("h1"));
+    Array.prototype.slice.call(article).forEach(function(articleContents) {
+      console.log(articleContents);
+      articleContents.addEventListener("click", function(event) {
+        event.target.innerHTML = "";
+      }, false);
+    });
+
+  });
+
+
 
 }
 
-function addClick(event) {
-	event.target.innerHTML = "click count: " + event.detail;
+function addClick() {
+
 }
 
