@@ -34,17 +34,6 @@ function addElement () {
 	myH1s = document.getElementsByTagName("h1");
   myH1sArray = Array.prototype.slice.call(myH1s);
 
-  // for (var i = 1; i < myH1s.length; i++) {
-  //   myH1sArray[i].addEventListener("click", function(event) {
-  //     var cache = event.target.nextSibling.innerHTML;
-  //     if (event.target.nextSibling.innerHTML !== "") {
-  //       event.target.nextSibling.innerHTML = "";
-  //     } else {
-  //       event.target.nextSibling.innerHTML = cache;
-  //     }
-  //   }, false);
-  // }
-
   for (var i = 1; i < myH1s.length; i++) {
     myH1sArray[i].addEventListener("click", function(event) {
         if (event.target.nextSibling.getAttribute("class") === "test") {
@@ -56,7 +45,18 @@ function addElement () {
     }, false);
   }
 
+  myArticlesArray = Array.prototype.slice.call(myArticles);
+  myPArray = Array.prototype.slice.call(myP);
 
+  for (var n = 0; n < myPArray.length; n++) {
+    myPArray[i].addEventListener("click", function(event) {
+        if (event.target.parentNode.getAttribute("class") === "bg-color") {
+          event.target.parentNode.setAttribute("class", "no-bg-color");
+        } else {
+          event.target.parentNode.setAttribute("class", "bg-color");
+        }
+    });
+  }
 }
 
 
