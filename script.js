@@ -34,11 +34,22 @@ function addElement () {
 	myH1s = document.getElementsByTagName("h1");
   myH1sArray = Array.prototype.slice.call(myH1s);
 
+  // for (var i = 1; i < myH1s.length; i++) {
+  //   myH1sArray[i].addEventListener("click", function(event) {
+  //     var cache = event.target.nextSibling.innerHTML;
+  //     if (event.target.nextSibling.innerHTML !== "") {
+  //       event.target.nextSibling.innerHTML = "";
+  //     } else {
+  //       event.target.nextSibling.innerHTML = cache;
+  //     }
+  //   }, false);
+  // }
+
   for (var i = 1; i < myH1s.length; i++) {
     myH1sArray[i].addEventListener("click", function(event) {
-      event.target.nextSibling.innerHTML = "";}, false);
+      event.target.nextSibling.setAttribute("display", "none");
+    }, false);
   }
-
 }
 
 
