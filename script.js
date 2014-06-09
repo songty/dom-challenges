@@ -51,8 +51,7 @@ function addElement () {
           event.target.nextSibling.setAttribute("class", "show");
         } else {
           event.target.nextSibling.setAttribute("class", "test");
-          // event.target.nextSibling.className = "test";
-          // console.log(event.target.nextSibling.getAttribute("display"));
+
         }
     }, false);
   }
