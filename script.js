@@ -47,9 +47,17 @@ function addElement () {
 
   for (var i = 1; i < myH1s.length; i++) {
     myH1sArray[i].addEventListener("click", function(event) {
-      event.target.nextSibling.setAttribute("display", "none");
+        if (event.target.nextSibling.getAttribute("class") === "test") {
+          event.target.nextSibling.setAttribute("class", "show");
+        } else {
+          event.target.nextSibling.setAttribute("class", "test");
+          // event.target.nextSibling.className = "test";
+          // console.log(event.target.nextSibling.getAttribute("display"));
+        }
     }, false);
   }
+
+
 }
 
 
