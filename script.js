@@ -31,11 +31,14 @@ function addElement () {
   myArticles[1].insertBefore(newFirsth1, myP[1]);
   myHead[0].insertBefore(title);
 
-	document.getElementById("test").addEventListener("click", addClick, false);
+	myH1s = document.getElementsByTagName("h1");
+  myH1sArray = Array.prototype.slice.call(myH1s);
+
+  for (var i = 1; i < myH1s.length; i++) {
+    myH1sArray[i].addEventListener("click", function(event) {
+      event.target.nextSibling.innerHTML = "";}, false);
+  }
 
 }
 
-function addClick(event) {
-	event.target.innerHTML = "click count: " + event.detail;
-}
 
